@@ -15,7 +15,6 @@ public class Main {
         int signIterator = 1;
         while (true) {
             counter++;
-            System.out.println(pass);
             String response = checkPass(pass);
             if (Objects.equals(response, "success")) {
                 System.out.println("Success!");
@@ -29,12 +28,14 @@ public class Main {
                 System.out.println("Password has different length!");
                 break;
             }
-            if (signIterator == 22) {
-                signIterator = 1;
-                elementNumber++;
-                continue;
-            }
+            System.out.println(response);
+            System.out.println(signIterator);
             if (Objects.equals(response, "<pass")) {
+                if (signIterator == 22) {
+                    signIterator = 1;
+                    elementNumber++;
+                    continue;
+                }
                 pass = pass.substring(0, elementNumber - 1) + signs[signIterator] + pass.substring(elementNumber);
                 signIterator++;
             } else {
