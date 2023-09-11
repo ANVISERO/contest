@@ -28,8 +28,6 @@ public class Main {
                 System.out.println("Password has different length!");
                 break;
             }
-            System.out.println(response);
-            System.out.println(signIterator);
             if (Objects.equals(response, "<pass")) {
                 if (signIterator == 22) {
                     signIterator = 1;
